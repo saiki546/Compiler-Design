@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+// Original function with common subexpression
+int original_function(int a, int b) {
+    int temp1 = a * b + 10;
+    int temp2 = a * b - 5;
+    return temp1 + temp2;
+}
+
+
+int optimized_function(int a, int b) {
+    int common_subexpr = a * b; 
+    int temp1 = common_subexpr + 10;
+    int temp2 = common_subexpr - 5;
+    return temp1 + temp2;
+}
+
+int main() {
+    int a = 5, b = 3;
+    printf("Original function result: %d\n", original_function(a, b));
+    printf("Optimized function result: %d\n", optimized_function(a, b));
+    return 0;
+}

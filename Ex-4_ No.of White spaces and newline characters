@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <ctype.h>
+int main() {
+    int whitespaceCount = 0;
+    int newlineCount = 0;
+    char ch;
+    printf("Enter text (press Enter twice to end input):\n");
+    while ((ch = getchar()) != EOF) {
+        if (ch == '\n') {
+            newlineCount++;
+        } else if (isspace(ch)) {
+            whitespaceCount++;
+        }
+    }
+    printf("Number of whitespace characters: %d\n", whitespaceCount);
+    printf("Number of newline characters: %d\n", newlineCount);
+    return 0;
+}
